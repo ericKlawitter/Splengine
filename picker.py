@@ -2,6 +2,7 @@ class SetupPicker:  # TODO implement some go back functionality
     def __init__(self, items, number):
         self.items = items
         self.number = number
+        self.pick()
 
     def _get_valid_input(self, num, picked):
         inp = input("Item %s: " % num)

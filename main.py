@@ -3,6 +3,10 @@ from board import Board, Noble
 from picker import SetupPicker
 from colors import *
 from cards import cards_one, cards_two, cards_three
+import argparse
+
+card_row_length = 4
+number_of_nobles = 3
 
 
 def all_nobles():
@@ -13,10 +17,18 @@ def all_nobles():
 
 
 if __name__ == '__main__':
-    board = Board(SetupPicker(cards_one, 4).pick(),
-                  SetupPicker(cards_two, 4).pick(),
-                  SetupPicker(cards_three, 4).pick(),
-                  SetupPicker(all_nobles(), 3).pick())
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--dry-run", help="Run without user input. For quick testing.", action="store_true")
+    if parser.parse_args().dry_run:
+        board = Board(cards_one[0:card_row_length],
+                      cards_two[0:card_row_length],
+                      cards_three[0:card_row_length],
+                      all_nobles()[0:number_of_nobles])
+    else:
+        board = Board(SetupPicker(cards_one, card_row_length),
+                      SetupPicker(cards_two, card_row_length),
+                      SetupPicker(cards_three, card_row_length),
+                      SetupPicker(all_nobles(), number_of_nobles))
     game = Game(board)
-    #add turn picker
+    print(game)
 
