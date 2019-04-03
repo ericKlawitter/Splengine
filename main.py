@@ -17,4 +17,6 @@ if __name__ == '__main__':
                   SetupPicker(cards_two, 4).pick(),
                   SetupPicker(cards_three, 4).pick(),
                   SetupPicker(all_nobles(), 3).pick())
-    print(board)
+    game = Game(board)
+    #add turn picker
+

@@ -18,6 +18,7 @@ class Player:
     def _get_card_colors(self):
         return str(self.l3_cards) #todo implement function to print Map of Colors of Cards Bought
 
+
 class Game:
     def __init__(self, board):
         self.p1 = Player()
@@ -26,5 +27,5 @@ class Game:
         #todo do we want turns?
 
     def __str__(self):
-        return str(self.board)
+        return "Board: %s\n Player1:%s\nPlayer2: %s" % (self.board, self.p1, self.p2)
 #   todo do we want a base object?
