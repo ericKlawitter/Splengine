@@ -1,4 +1,4 @@
-class SetupPicker:
+class SetupPicker:  # TODO implement some go back functionality
     def __init__(self, items, number):
         self.items = items
         self.number = number
@@ -13,7 +13,7 @@ class SetupPicker:
 
     def pick(self):
         picked = set()
-        print("Pick %s items: ")
+        print("Pick %s items: " % self.number)
         for idx, n in enumerate(self.items):
             print("%s: %s" % (idx, n))
         game_list = []

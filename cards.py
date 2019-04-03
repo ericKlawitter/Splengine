@@ -8,7 +8,7 @@ class Card:
         self.costs = costs
 
     def __str__(self):
-        return 'Points: %s\nColor: %s\nCosts: %s\n' % (self.points, self.color, self.costs)
+        return 'Points: %s Color: %s Costs: %s' % (self.points, self.color, self.costs)
 
     def __repr__(self):
         return self.__str__()

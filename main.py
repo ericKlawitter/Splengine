@@ -2,6 +2,7 @@ from game import Game
 from board import Board, Noble
 from picker import SetupPicker
 from colors import *
+from cards import cards_one, cards_two, cards_three
 
 
 def all_nobles():
@@ -12,5 +13,8 @@ def all_nobles():
 
 
 if __name__ == '__main__':
-    nobles = SetupPicker(all_nobles(), 3).pick()
-    print(nobles)
+    board = Board(SetupPicker(cards_one, 4).pick(),
+                  SetupPicker(cards_two, 4).pick(),
+                  SetupPicker(cards_three, 4).pick(),
+                  SetupPicker(all_nobles(), 3).pick())
+    print(board)
