@@ -96,7 +96,7 @@ cards_two = (Card(1, white, {green: 3, red: 2, black: 2}),
 cards_three = (Card(3, white, {blue: 3, green: 3, red: 5, black: 3}),
                Card(4, white, {black: 7}),
                Card(4, white, {white: 3, red: 3, black: 6}),
-               Card(5, white, {white: 3, red: 7}),
+               Card(5, white, {white: 3, black: 7}),
 
                Card(3, blue, {white: 3, green: 3, red: 3, black: 5}),
                Card(4, blue, {white: 7}),

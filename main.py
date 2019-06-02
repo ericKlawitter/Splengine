@@ -25,10 +25,10 @@ if __name__ == '__main__':
                       cards_three[0:card_row_length],
                       all_nobles()[0:number_of_nobles])
     else:
-        board = Board(SetupPicker(cards_one, card_row_length),
-                      SetupPicker(cards_two, card_row_length),
-                      SetupPicker(cards_three, card_row_length),
-                      SetupPicker(all_nobles(), number_of_nobles))
+        board = Board(SetupPicker.pick(cards_one, card_row_length),
+                      SetupPicker.pick(cards_two, card_row_length),
+                      SetupPicker.pick(cards_three, card_row_length),
+                      SetupPicker.pick(all_nobles(), number_of_nobles))
     game = Game(board)
     print(game)
 

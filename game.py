@@ -27,5 +27,5 @@ class Game:
         #todo do we want turns?
 
     def __str__(self):
-        return "Board: %s\n Player1:%s\nPlayer2: %s" % (self.board, self.p1, self.p2)
+        return "Board: %s\nPlayer1:%s\nPlayer2: %s" % (self.board, self.p1, self.p2)
 #   todo do we want a base object?
