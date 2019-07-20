@@ -1,6 +1,6 @@
 from game import Game
 from board import Board, Noble
-from picker import SetupPicker, TurnPicker
+from picker import Picker
 from colors import *
 from cards import cards_one, cards_two, cards_three
 import argparse
@@ -32,7 +32,7 @@ if __name__ == '__main__':
     game = Game(board)
     print(game)
     while not game.is_finished():
-        TurnPicker.take_turn(game)
+        Picker.take_turn(game)
         game.p1_turn = not game.p1_turn
 
 
