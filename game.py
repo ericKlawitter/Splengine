@@ -24,8 +24,16 @@ class Game:
         self.p1 = Player()
         self.p2 = Player()
         self.board = board
+        self.p1_turn = 0
         #todo do we want turns?
 
     def __str__(self):
         return "Board: %s\nPlayer1:%s\nPlayer2: %s" % (self.board, self.p1, self.p2)
 #   todo do we want a base object?
+
+    def is_finished(self):
+        return self.p1.score >= 15 or self.p2.score >= 15
+
+    def take_turn(self): #TODO do we need this? Could just set in
+        TurnTaker.take_turn(self.p1 if self.p1_turn else self.p2, self.board)
+        self.p1_turn = not self.p1_turn
