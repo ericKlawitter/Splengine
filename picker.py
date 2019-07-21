@@ -9,6 +9,17 @@ class Picker:
             return val
 
     @staticmethod
+    def get_single(msg, max_legal, picked):
+        try:
+            picked_idx = Picker.get_valid_input(msg, max_legal, picked)
+        except ValueError:
+            print("Invalid Input. Try again.\n")
+            return Picker.get_single(msg, max_legal, picked)
+        else:
+            print("Successfully added.")
+            return picked_idx
+
+    @staticmethod
     def setup_board(items, num):
         picked = set()
         print("Pick %s items: " % num)
@@ -16,18 +27,8 @@ class Picker:
             print("%s: %s" % (idx, n))
         game_list = []
 
-        def get_single():
-            try:
-                picked_idx = Picker.get_valid_input("Enter Card Index:", len(items), picked)
-            except ValueError:
-                print("Invalid Input. Try again.\n")
-                return get_single()
-            else:
-                print("Successfully added")
-                return picked_idx
-
         while num > 0:
-            val = get_single()
+            val = Picker.get_single("Enter Card Index: ", len(items), picked)
             picked.add(val)
             game_list.append(items[val])
             num -= 1

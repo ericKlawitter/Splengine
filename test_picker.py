@@ -21,11 +21,11 @@ class TestPicker(TestCase):
         with self.assertRaises(ValueError):
             Picker.get_valid_input("", len(nobles))
 
-    @mock.patch("builtins.input") #TODO this functionality should be tested in setup method, not valid input, due to changes
+    @mock.patch("builtins.input", return_value=1)
     def test_duplicate_input(self, input):
         picked = {4, 1}
         with self.assertRaises(ValueError):
-            Picker.get_valid_input("", len(nobles))
+            Picker.get_valid_input("", len(nobles), picked)
 
     @mock.patch("builtins.input", return_value=-1)
     def test_less_than_0_input(self, input):
