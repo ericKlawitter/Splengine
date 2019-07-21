@@ -18,6 +18,9 @@ class Player:
     def _get_card_colors(self):
         return str(self.l3_cards) #todo implement function to print Map of Colors of Cards Bought
 
+    def get_total_coins(self):
+        return sum(k for k in self.coins.values())
+
 
 class Game:
     def __init__(self, board):

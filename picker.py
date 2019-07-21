@@ -37,7 +37,7 @@ class Picker:
     def pick_coins(game):
         print("Available coins: %s", game.coins)
         print("Pick up to 3 distinct coins, or two of the same color. You may only have two of the same color.")
-        return 3
+        picked = set()
 
 
     @staticmethod

@@ -25,15 +25,13 @@ if __name__ == '__main__':
                       cards_three[0:card_row_length],
                       all_nobles()[0:number_of_nobles])
     else:
-        board = Board(SetupPicker.pick(cards_one, card_row_length),
-                      SetupPicker.pick(cards_two, card_row_length),
-                      SetupPicker.pick(cards_three, card_row_length),
-                      SetupPicker.pick(all_nobles(), number_of_nobles))
+        board = Board(Picker.setup_board(cards_one, card_row_length),
+                      Picker.setup_board(cards_two, card_row_length),
+                      Picker.setup_board(cards_three, card_row_length),
+                      Picker.setup_board(all_nobles(), number_of_nobles))
     game = Game(board)
+    turns = [game]
     print(game)
     while not game.is_finished():
-        Picker.take_turn(game)
-        game.p1_turn = not game.p1_turn
-
-
-
+        game = Picker.take_turn(game)
+        turns.append(game)
