@@ -36,11 +36,10 @@ class Picker:
 
     @staticmethod
     def pick_coins(game):
-        print("Available coins: %s", game.coins)
+        print("Available coins: %s", game.p1.coins)
         print("Pick up to 3 distinct coins, or two of the same color. You may only have two of the same color.")
         picked = set()
-
-
+        return picked
 
     @staticmethod
     def take_turn(game):
@@ -49,11 +48,11 @@ class Picker:
         if choice == 0:
             coins = Picker.pick_coins(game)
         elif choice == 1:
-            reserve_card(game)
+            pass
         elif choice == 2:
-            buy_from_board(game)
+            pass
         elif choice == 3:
-            buy_from_reserves(game.p1) #todo we need to verify whose turn it is
+            pass #todo we need to verify whose turn it is
         else:
             pass
-        # todo how do we want to process here? Return a new game, player, or do everything in place
+        return game #todo modify game || create new one
