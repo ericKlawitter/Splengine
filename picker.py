@@ -3,7 +3,7 @@ class Picker:
     @staticmethod
     def get_valid_input(msg, max_legal, picked=set()):
         val = int(input(msg))
-        if val < 0 or val >= max_legal or val in picked:
+        if val < 0 or val > max_legal or val in picked:
             raise ValueError
         else:
             return val
@@ -18,7 +18,7 @@ class Picker:
 
         def get_single():
             try:
-                picked_idx = Picker.get_valid_input("Enter Card Index:", len(items) - 1, picked)
+                picked_idx = Picker.get_valid_input("Enter Card Index:", len(items), picked)
             except ValueError:
                 print("Invalid Input. Try again.\n")
                 return get_single()
@@ -38,6 +38,7 @@ class Picker:
         print("Available coins: %s", game.coins)
         print("Pick up to 3 distinct coins, or two of the same color. You may only have two of the same color.")
         picked = set()
+
 
 
     @staticmethod
