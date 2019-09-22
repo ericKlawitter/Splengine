@@ -1,5 +1,4 @@
 from unittest import TestCase, mock
-from unittest.mock import MagicMock
 from picker import Picker
 import test_utils
 
