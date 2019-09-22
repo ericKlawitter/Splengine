@@ -2,9 +2,7 @@ class Player:
     def __init__(self):
         self.score = 0
         self.nobles = []
-        self.l1_cards = []
-        self.l2_cards = []
-        self.l3_cards = []
+        self.cards_bought = []
         self.coins = dict()
         self.reserves = []
 
@@ -18,7 +16,7 @@ class Player:
     def _get_card_colors(self):
         return str(self.l3_cards) #todo implement function to print Map of Colors of Cards Bought
 
-    def get_total_coins(self):
+    def total_coins(self):
         return sum(k for k in self.coins.values())
 
 
@@ -35,8 +33,4 @@ class Game:
 #   todo do we want a base object?
 
     def is_finished(self):
-        return self.p1.score >= 15 or self.p2.score >= 15
-
-    def take_turn(self): #TODO do we need this? Could just set in
-        TurnTaker.take_turn(self.p1 if self.p1_turn else self.p2, self.board)
-        self.p1_turn = not self.p1_turn
+        return self.p1.score >= 15 or self.p2.score >= 15 and self.p1_turn

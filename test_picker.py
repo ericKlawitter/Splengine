@@ -1,5 +1,6 @@
 from unittest import TestCase, mock
 from picker import Picker
+from colors import *
 import test_utils
 
 
@@ -52,6 +53,11 @@ class TestPicker(TestCase):
     #def test_take_turn_1(self, input):
     #    pass
 
-   # @mock.patch("builtins.input")
-   # def test_pick_coins(self, input, mock):
-    #    self.assertEqual(1, Picker.pick_coins(test_utils.game))
+    def test_pick_coins(self):
+        Picker.pick_coins(test_utils.game, test_utils.player)
+        self.fail("need to implement this unit test")
+
+    def test_remove_forGenericTesting(self):
+        coins = {white: 1, blue: 2, gold: 5}
+        self.assertEqual(coins[Color(1)], 1)
+        self.assertEqual(coins[Color(6)], 5)
