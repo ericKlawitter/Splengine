@@ -42,8 +42,10 @@ class Picker:
         picked = []
         inp = input(Picker.print_coins(game.board.coins))
         while inp.lower() != "q" and (len(picked) < 3 or len(picked) == 2 and picked[0] == picked[1]):
-            if 1: #valid input
-                print("here")#doSomething
+            try:
+                x = int(inp)
+            except ValueError:
+                print("Not a valid input")
             else:
                 print("here")#x = 1#PromptAgain
         #add coins to the player
